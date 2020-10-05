@@ -6,7 +6,7 @@
         <title>Laravel</title>
     </head>
     <body>
-        <div id='example'>
+        <div id='Index'>
         </div>
         <script src="{{ asset('js/app.js') }}"></script>
     </body>

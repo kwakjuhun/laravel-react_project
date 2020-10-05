@@ -1,0 +1,14 @@
+body {
+    margin:0;
+    padding:0;
+}
+#Header{
+    height: 50px;
+    border: 10px solid black;
+}
+#Footer{
+    position: absolute;
+    bottom: 0;
+    height: 40px;
+    border: 10px solid black;
+}
