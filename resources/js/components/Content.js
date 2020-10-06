@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-
+import Board from './contents/Board'
 class Content extends Component{
     render(){
       return(
         <div>
-            Content
+            <Board></Board>
         </div>
       )
     }

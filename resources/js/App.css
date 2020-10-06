@@ -3,12 +3,26 @@ body {
     padding:0;
 }
 #Header{
-    height: 50px;
+    height: 150px;
     border: 10px solid black;
 }
 #Footer{
     position: absolute;
+    width: 100%;
     bottom: 0;
     height: 40px;
     border: 10px solid black;
+}
+
+
+#navigation_div{
+    float: right;
+    margin-right:30px;
+    border-bottom: 1px solid black;
+}
+#navigation_div .nav_button{
+    margin : 13px;
+}
+#logo{
+    margin-left: 20px;
 }

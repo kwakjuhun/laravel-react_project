@@ -3,7 +3,7 @@ class MainHeader extends Component{
     render(){
       return(
         <div>
-            <h1>게시판</h1>
+            <h1 id="logo">게시판 프로젝트</h1>
         </div>
       )
     }
