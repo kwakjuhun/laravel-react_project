@@ -35,7 +35,7 @@ class Board extends Component{
             <div id="Board">
                 <table>
                     <tbody>
-                        <tr key='13'>
+                        <tr key='board_title'>
                             <th>번호</th>
                             <th>제목</th>
                             <th>조회수</th>
