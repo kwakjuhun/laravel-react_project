@@ -3,7 +3,7 @@ class Board extends Component{
     render(){
         return(
             <div id="Mainpage">
-                메인페이지
+                <h1>메인페이지</h1>
             </div>
       )
     }

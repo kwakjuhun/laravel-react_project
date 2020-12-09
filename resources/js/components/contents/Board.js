@@ -1,50 +1,93 @@
 import React, { Component } from 'react';
+
+import BoardContent from './BoardContent';
+
+import BoardEdit from './BoardEdit';
 class Board extends Component{
+    constructor(props){  // 컴포넌트가 실행되면 젤 먼저 실행    초기화를 담당
+        super(props);
+        this.state = {
+            login:false,
+            data:[],
+            mode:'list',
+            clicked:0
+        };  
+        
+        axios.get('/board/'+1)
+        .then((response)=>{
+            this.setState({
+                data:response.data[0],
+                login:response.data[1]
+            });
+        }).catch((err)=>{
+            console.log(err);
+        });
+    
+    }
+    dataUpdate(){
+        axios.get('/board/'+1)
+        .then((response)=>{
+            this.setState({
+                data:response.data[0],
+            });
+        }).catch((err)=>{
+            console.log(err);
+        });
+    }
+ 
     render(){
-        var list = []
-        var datas = [[0,'제목1','32'],[1,'제목2','53'],[2,'제목3','12']]
+    
+        var list = [];
+        var datas = this.state.data;
         var i = 0
         while(i < datas.length){
             var data = datas[i];
+            let j = i;
             list.push(
-                <tr key={data[0]}>
-                    <th>{data[0]}</th>
-                    <th>{data[1]}</th>
-                    <th>{data[2]}</th>
+                <tr key={j} onClick={function(e){
+                        this.setState({mode:'view', clicked:j});
+                    }.bind(this)}>
+                    <th>{data.id}</th>
+                    <th>{data.title}</th>
+                    <th>{data.user.name}</th>
                 </tr>
             )
             i = i + 1
-        }
-        // while(i < this.props.data.length){
-        //     var data = this.props.data[i];
-        //     list.push(
-        //     <li key={data.id}>
-        //         <a href={data.id+'.html'} onClick={function(id, e){
-        //         e.preventDefault(); // 페이지 전환 막기
-        //         this.props.onSelect(id);
-        //         }.bind(this, data.id)}>
-        //         {data.title}
-        //         </a>
-        //     </li>)
-        //     i = i + 1;
-        // }
-
-
+        };
 
         return(
             <div id="Board">
-                <table>
+                <table id="boardTable">
                     <tbody>
                         <tr key='board_title'>
-                            <th>번호</th>
-                            <th>제목</th>
-                            <th>조회수</th>
+                            <th width="15%">번호</th>
+                            <th width="70%">제목</th>
+                            <th width="15%">작성자</th>
                         </tr>
                         {list}
                     </tbody>
                 </table>
+                {this.state.login ? <button onClick={function(e){
+                    this.setState({mode:'create'})
+                }.bind(this)}>글쓰기</button> : null}
+                {this.state.mode == 'view' ? <BoardContent data={[this.state.data[this.state.clicked], this.state.login]} 
+                onSelect={function(response){
+                    if(response == 'edit'){
+                        this.setState({mode:'edit'});
+                    }else{
+                        this.setState({mode:'list'});
+                    }
+                }.bind(this)}></BoardContent> : null}
+                {this.state.mode == 'create' ? <BoardEdit onSelect={function(res){
+                    this.setState({mode:'list'});
+                    this.dataUpdate();
+                }.bind(this)}></BoardEdit> : null}
+                {this.state.mode == 'edit' ? <BoardEdit data={this.state.data[this.state.clicked]} onSelect={function(res){
+                    this.setState({mode:'list'});
+                    this.dataUpdate();
+                }.bind(this)}></BoardEdit> : null}
             </div>
-      )
+        )
     }
 }
 
