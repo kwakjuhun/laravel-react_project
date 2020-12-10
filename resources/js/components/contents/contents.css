@@ -26,6 +26,7 @@
     padding : 10px;
     border-top: 1px solid gray;
     border-bottom: 1px solid gray;
+    font-weight: bold;
 }
 .board_body{
     margin-top : 10px;

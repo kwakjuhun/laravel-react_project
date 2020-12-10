@@ -44,11 +44,11 @@ class Header extends Component{
         <a key="login" onClick={function(e){
           e.preventDefault();
           this.setState({auth:'login'});
-        }.bind(this)}>로그인</a>,
+        }.bind(this)}> 로그인 </a>,
         <a key="signup" onClick={function(e){
           e.preventDefault();
           this.setState({auth:'signup'});
-        }.bind(this)}>회원가입</a>
+        }.bind(this)}> 회원가입 </a>
       ];
     }else{
       return <a onClick={function(e){

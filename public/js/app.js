@@ -6350,7 +6350,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "#Board{\r\n    margin-top : 30px;\r\n    height:100%;\r\n}\r\n#Board table{\r\n    width: 100%;\r\n    border-top: 1px solid #444444;\r\n    border-collapse: collapse;\r\n  }\r\n#Board th, td {\r\n    border-bottom: 1px solid #444444;\r\n    padding: 10px;\r\n}\r\n\r\n#BoardContent, #BoardEdit{\r\n    position: absolute;\r\n    background-color: white;\r\n    top:0px;\r\n    width: 100%;\r\n    height: 100%;\r\n    z-index: 10;\r\n\r\n}\r\n.board_title{\r\n    margin-top : 40px;\r\n    padding : 10px;\r\n    border-top: 1px solid gray;\r\n    border-bottom: 1px solid gray;\r\n}\r\n.board_body{\r\n    margin-top : 10px;\r\n    padding : 10px;\r\n    border-bottom: 1px solid gray;\r\n}\r\n.board_back_btn{\r\n    margin-top : 30px;\r\n}\r\n\r\n.edit_title{\r\n    margin-top:30px;\r\n    width: 90%; \r\n    height: 30px;\r\n}\r\n.edit_body{\r\n    margin-top:30px;\r\n    width: 90%; \r\n    height: 600px;\r\n\r\n}\r\n.edit_back_btn{\r\n    margin-top:30px;\r\n\r\n}\r\n\r\nbutton{\r\n    border-radius: 5px;\r\n    margin:10px;\r\n    color:white;\r\n    background-color: orange;\r\n    border-color: rgb(255, 182, 30);\r\n    padding: 5px 10px 5px 10px\r\n}", ""]);
+exports.push([module.i, "#Board{\r\n    margin-top : 30px;\r\n    height:100%;\r\n}\r\n#Board table{\r\n    width: 100%;\r\n    border-top: 1px solid #444444;\r\n    border-collapse: collapse;\r\n  }\r\n#Board th, td {\r\n    border-bottom: 1px solid #444444;\r\n    padding: 10px;\r\n}\r\n\r\n#BoardContent, #BoardEdit{\r\n    position: absolute;\r\n    background-color: white;\r\n    top:0px;\r\n    width: 100%;\r\n    height: 100%;\r\n    z-index: 10;\r\n\r\n}\r\n.board_title{\r\n    margin-top : 40px;\r\n    padding : 10px;\r\n    border-top: 1px solid gray;\r\n    border-bottom: 1px solid gray;\r\n    font-weight: bold;\r\n}\r\n.board_body{\r\n    margin-top : 10px;\r\n    padding : 10px;\r\n    border-bottom: 1px solid gray;\r\n}\r\n.board_back_btn{\r\n    margin-top : 30px;\r\n}\r\n\r\n.edit_title{\r\n    margin-top:30px;\r\n    width: 90%; \r\n    height: 30px;\r\n}\r\n.edit_body{\r\n    margin-top:30px;\r\n    width: 90%; \r\n    height: 600px;\r\n\r\n}\r\n.edit_back_btn{\r\n    margin-top:30px;\r\n\r\n}\r\n\r\nbutton{\r\n    border-radius: 5px;\r\n    margin:10px;\r\n    color:white;\r\n    background-color: orange;\r\n    border-color: rgb(255, 182, 30);\r\n    padding: 5px 10px 5px 10px\r\n}", ""]);
 
 // exports
 
@@ -66655,7 +66655,7 @@ var Footer = /*#__PURE__*/function (_Component) {
     value: function render() {
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         id: "Footer"
-      }, "Footer");
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Footer"));
     }
   }]);
 
@@ -66777,7 +66777,7 @@ var Header = /*#__PURE__*/function (_Component) {
               auth: 'login'
             });
           }.bind(this)
-        }, "\uB85C\uADF8\uC778"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        }, " \uB85C\uADF8\uC778 "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
           key: "signup",
           onClick: function (e) {
             e.preventDefault();
@@ -66785,7 +66785,7 @@ var Header = /*#__PURE__*/function (_Component) {
               auth: 'signup'
             });
           }.bind(this)
-        }, "\uD68C\uC6D0\uAC00\uC785")];
+        }, " \uD68C\uC6D0\uAC00\uC785 ")];
       } else {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
           onClick: function (e) {
@@ -67368,7 +67368,9 @@ var Board = /*#__PURE__*/function (_Component) {
     value: function render() {
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         id: "Mainpage"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "\uBA54\uC778\uD398\uC774\uC9C0"));
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "\uBA54\uC778\uD398\uC774\uC9C0"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: __webpack_require__(/*! ../../../../storage/cat.jpg */ "./storage/cat.jpg")
+      }));
     }
   }]);
 
@@ -67654,6 +67656,17 @@ if(false) {}
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ "./storage/cat.jpg":
+/*!*************************!*\
+  !*** ./storage/cat.jpg ***!
+  \*************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/cat.jpg?ea3720d5c9c1b7263bd0956eff4930a4";
 
 /***/ }),
 
