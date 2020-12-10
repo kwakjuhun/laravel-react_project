@@ -67066,6 +67066,7 @@ var Board = /*#__PURE__*/function (_Component) {
               mode: 'edit'
             });
           } else {
+            this.dataUpdate();
             this.setState({
               mode: 'list'
             });
@@ -67106,8 +67107,10 @@ var Board = /*#__PURE__*/function (_Component) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -67132,6 +67135,7 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 
 
 
+
 var Board = /*#__PURE__*/function (_Component) {
   _inherits(Board, _Component);
 
@@ -67146,18 +67150,29 @@ var Board = /*#__PURE__*/function (_Component) {
   _createClass(Board, [{
     key: "render",
     value: function render() {
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         id: "BoardContent"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "board_title"
-      }, this.props.data[0].title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, this.props.data[0].title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "board_body"
-      }, this.props.data[0].body), this.props.data[1] == this.props.data[0].user_id ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      }, this.props.data[0].body), this.props.data[1] == this.props.data[0].user_id ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
         onClick: function (e) {
           e.preventDefault();
           this.props.onSelect('edit');
         }.bind(this)
-      }, "\uC218\uC815") : null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      }, "\uC218\uC815") : null, this.props.data[1] == this.props.data[0].user_id ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
+        onClick: function (e) {
+          var _this = this;
+
+          e.preventDefault();
+          axios["delete"]('/post/' + this.props.data[0].id).then(function (res) {
+            _this.props.onSelect('list');
+          })["catch"](function (res) {
+            console.error(res);
+          });
+        }.bind(this)
+      }, "\uC0AD\uC81C") : null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
         className: "board_back_btn",
         onClick: function (e) {
           e.preventDefault();
@@ -67168,7 +67183,7 @@ var Board = /*#__PURE__*/function (_Component) {
   }]);
 
   return Board;
-}(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
+}(react__WEBPACK_IMPORTED_MODULE_1__["Component"]);
 
 /* harmony default export */ __webpack_exports__["default"] = (Board);
 

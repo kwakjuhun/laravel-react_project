@@ -75,6 +75,7 @@ class Board extends Component{
                     if(response == 'edit'){
                         this.setState({mode:'edit'});
                     }else{
+                        this.dataUpdate();
                         this.setState({mode:'list'});
                     }
                 }.bind(this)}></BoardContent> : null}

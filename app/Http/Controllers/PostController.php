@@ -99,6 +99,7 @@ class PostController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $deleted = Post::where('id',$id)->delete();
+        return response()->json([$deleted], 200);
     }
 }
